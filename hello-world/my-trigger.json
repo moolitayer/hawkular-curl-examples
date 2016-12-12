@@ -1,0 +1,23 @@
+{
+  "triggers":[
+    {
+      "trigger": {
+        "id": "node-cpu-trigger",
+        "eventType": "ALERT",
+        "name": "Node CPU Trigger",
+        "description": "Node CPU trigger",
+        "severity": "HIGH",
+        "enabled": true
+      },
+      "conditions":[
+        {
+          "triggerMode": "FIRING",
+          "type": "THRESHOLD",
+          "dataId": "hm_g_data_x",
+          "operator": "GT",
+          "threshold": 100
+        }
+      ]
+    }
+  ]
+}

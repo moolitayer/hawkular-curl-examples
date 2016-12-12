@@ -1,0 +1,32 @@
+{
+  "triggers":[
+    {
+      "trigger": {
+        "id": "auto-resolving-trigger",
+        "eventType": "ALERT",
+        "name": "Auto Resolving trigger ",
+        "description": "Auto resolving trigger example",
+        "severity": "HIGH",
+        "autoResolve": true,
+        "autoResolveAlerts": true,
+        "enabled": true
+      },
+      "conditions":[
+        {
+          "triggerMode": "FIRING",
+          "type": "THRESHOLD",
+          "dataId": "hm_g_data_x",
+          "operator": "GT",
+          "threshold": 5
+        },
+        {
+          "triggerMode": "AUTORESOLVE",
+          "type": "THRESHOLD",
+          "dataId": "hm_g_data_x",
+          "operator": "GTE",
+          "threshold": 5
+        }
+      ]
+    }
+  ]
+}
