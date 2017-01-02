@@ -23,7 +23,7 @@
           "triggerMode": "AUTORESOLVE",
           "type": "THRESHOLD",
           "dataId": "hm_g_data_x",
-          "operator": "GTE",
+          "operator": "LTE",
           "threshold": 5
         }
       ]
