@@ -1,0 +1,82 @@
+[
+  {
+    "eventType": "ALERT",
+    "tenantId": "_system",
+    "id": "ops-example-1488369320449-e3976d15-7842-4537-8b70-7877be9fcd88",
+    "ctime": 1488369320449,
+    "dataSource": "_none_",
+    "dataId": "ops-example",
+    "category": "ALERT",
+    "text": "This text shows up on the alerts screen",
+    "tags": {
+      "nodename": "vm-48-124.eng.lab.tlv.redhat.com",
+      "type": "node",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    "trigger": {
+      "tenantId": "_system",
+      "id": "ops-example",
+      "name": "Auto Resolving trigger",
+      "description": "Auto resolving trigger example",
+      "type": "STANDARD",
+      "eventType": "ALERT",
+      "eventCategory": null,
+      "eventText": "This text shows up on the alerts screen",
+      "severity": "HIGH",
+      "tags": {
+        "nodename": "vm-48-124.eng.lab.tlv.redhat.com",
+        "type": "node",
+        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      "autoDisable": false,
+      "autoEnable": false,
+      "autoResolve": true,
+      "autoResolveAlerts": true,
+      "autoResolveMatch": "ALL",
+      "enabled": true,
+      "firingMatch": "ALL",
+      "source": "_none_"
+    },
+    "dampening": {
+      "tenantId": "_system",
+      "triggerId": "ops-example",
+      "triggerMode": "FIRING",
+      "type": "STRICT",
+      "evalTrueSetting": 1,
+      "evalTotalSetting": 1,
+      "evalTimeSetting": 0,
+      "dampeningId": "_system-ops-example-FIRING"
+    },
+    "evalSets": [
+      [
+        {
+          "evalTimestamp": 1488369320448,
+          "dataTimestamp": 1488369315000,
+          "type": "THRESHOLD",
+          "condition": {
+            "tenantId": "_system",
+            "triggerId": "ops-example",
+            "triggerMode": "FIRING",
+            "type": "THRESHOLD",
+            "conditionSetSize": 1,
+            "conditionSetIndex": 1,
+            "conditionId": "_system-ops-example-FIRING-1-1",
+            "dataId": "hm_g_data_x",
+            "operator": "GT",
+            "threshold": 5
+          },
+          "value": 7
+        }
+      ]
+    ],
+    "severity": "HIGH",
+    "status": "OPEN",
+    "lifecycle": [
+      {
+        "status": "OPEN",
+        "user": "system",
+        "stime": 1488369320449
+      }
+    ]
+  }
+]
