@@ -1,0 +1,113 @@
+{
+  "trigger": {
+    "tenantId": "_ops",
+    "id": "master-node-member-docker-ping",
+    "name": "Docker Ping Member",
+    "type": "MEMBER",
+    "eventType": "ALERT",
+    "eventCategory": null,
+    "eventText": null,
+    "severity": "HIGH",
+    "autoDisable": false,
+    "autoEnable": false,
+    "autoResolve": true,
+    "autoResolveAlerts": true,
+    "autoResolveMatch": "ALL",
+    "dataIdMap": {
+      "docker.ping": "hm_g_node/vm-48-124.eng.lab.tlv.redhat.com/docker.ping"
+    },
+    "memberOf": "test-docker-ping",
+    "enabled": true,
+    "firingMatch": "ALL",
+    "source": "_none_"
+  },
+  "conditions": [
+    {
+      "tenantId": "_ops",
+      "triggerId": "master-node-member-docker-ping",
+      "triggerMode": "FIRING",
+      "type": "THRESHOLD",
+      "conditionSetSize": 1,
+      "conditionSetIndex": 1,
+      "conditionId": "_ops-master-node-member-docker-ping-FIRING-1-1",
+      "context": {
+        "name": "Docker Ping Error"
+      },
+      "dataId": "hm_g_node/vm-48-124.eng.lab.tlv.redhat.com/docker.ping",
+      "operator": "LT",
+      "threshold": 1
+    },
+    {
+      "tenantId": "_ops",
+      "triggerId": "master-node-member-docker-ping",
+      "triggerMode": "AUTORESOLVE",
+      "type": "THRESHOLD",
+      "conditionSetSize": 1,
+      "conditionSetIndex": 1,
+      "conditionId": "_ops-master-node-member-docker-ping-AUTORESOLVE-1-1",
+      "context": {
+        "name": "Docker Ping Ok"
+      },
+      "dataId": "hm_g_node/vm-48-124.eng.lab.tlv.redhat.com/docker.ping",
+      "operator": "GTE",
+      "threshold": 1
+    }
+  ]
+}
+
+{
+  "triggers": [
+    {
+      "trigger": {
+        "tenantId": "_system",
+        "id": "ops-example",
+        "name": "Auto Resolving trigger",
+        "description": "Auto resolving trigger example",
+        "type": "STANDARD",
+        "eventType": "ALERT",
+        "eventCategory": null,
+        "eventText": "This text shows up on the alerts screen",
+        "severity": "HIGH",
+        "tags": {
+          "nodename": "vm-48-124.eng.lab.tlv.redhat.com",
+          "type": "node",
+          "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        },
+        "autoDisable": false,
+        "autoEnable": false,
+        "autoResolve": true,
+        "autoResolveAlerts": true,
+        "autoResolveMatch": "ALL",
+        "enabled": true,
+        "firingMatch": "ALL",
+        "source": "_none_"
+      },
+      "conditions": [
+        {
+          "tenantId": "_system",
+          "triggerId": "ops-example",
+          "triggerMode": "FIRING",
+          "type": "THRESHOLD",
+          "conditionSetSize": 1,
+          "conditionSetIndex": 1,
+          "conditionId": "_system-ops-example-FIRING-1-1",
+          "dataId": "hm_g_data_x",
+          "operator": "GT",
+          "threshold": 5
+        },
+        {
+          "tenantId": "_system",
+          "triggerId": "ops-example",
+          "triggerMode": "AUTORESOLVE",
+          "type": "THRESHOLD",
+          "conditionSetSize": 1,
+          "conditionSetIndex": 1,
+          "conditionId": "_system-ops-example-AUTORESOLVE-1-1",
+          "dataId": "hm_g_data_x",
+          "operator": "LTE",
+          "threshold": 5
+        }
+      ]
+    }
+  ]
+}
